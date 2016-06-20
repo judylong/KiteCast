@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require underscore
+//= require highcharts
+//= require highcharts-theme
 //= require backbone
 //= require sky_cast
 //= require_tree ../templates
