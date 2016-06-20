@@ -4,7 +4,8 @@ window.SkyCast = {
   Views: {},
   Routers: {},
   initialize: function() {
-    alert('Hello from Backbone!');
+    this.router = new SkyCast.Routers.Router({$rootEl: $("#main")});
+    Backbone.history.start();
   }
 };
 
