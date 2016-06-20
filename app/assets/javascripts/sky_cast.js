@@ -4,6 +4,7 @@ window.SkyCast = {
   Views: {},
   Routers: {},
   initialize: function() {
+    this.header = new SkyCast.Views.Header({el: $("#header")});
     this.router = new SkyCast.Routers.Router({$rootEl: $("#main")});
     Backbone.history.start();
   }
