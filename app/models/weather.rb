@@ -3,10 +3,10 @@ class Weather
   ForecastIO.api_key = ENV["ForecastIO.api_key"]
 
   attr_reader :cast, :currently, :next48hours_chart, :next7days_chart, :next48hours, :next7days
-  # def initialize(location_params)
-  def initialize
-    # cast = ForecastIO.forecast(location_params[:latitude], location_params[:longitude], {exclude: ['minutely,flags']})
-    cast = JSON.parse(IO.read(File.join(Rails.root, 'dummy.json')))
+
+  def initialize(location_params)
+    cast = ForecastIO.forecast(location_params[:latitude], location_params[:longitude], {exclude: ['minutely,flags']})
+
     @currently = cast['currently']
 
     @next48hours_chart = Weather.chartify(cast['hourly']['data'], ["temperature", "humidity", "cloudCover", "windSpeed", "precipProbability", "time"], "hour")
