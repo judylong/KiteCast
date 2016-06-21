@@ -33,7 +33,7 @@ i {
 }
 
 .day {
-  margin: 10px auto;
+  margin: 10px 5px;
   border: 2px solid rgb(112, 112, 115);
   background-color: #353537;
   border-radius: 3px;
@@ -41,7 +41,8 @@ i {
   text-align: center;
   width: 200px;
   height: 300px;
-  display: inline-block;
+  display: block;
+  float: left;
 }
 
 .week {

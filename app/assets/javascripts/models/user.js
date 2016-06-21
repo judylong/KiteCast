@@ -64,9 +64,10 @@ SkyCast.Models.CurrentUser = SkyCast.Models.User.extend({
       dataType: "json",
       success: function(data) {
         model.clear();
+        Backbone.history.navigate("", {trigger: true});
       },
       error: function() {
-        alert("Error! Could not log out.")
+        alert("Error! Could not log out.");
       }
     });
   },

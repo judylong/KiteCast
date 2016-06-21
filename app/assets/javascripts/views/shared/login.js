@@ -16,7 +16,7 @@ SkyCast.Views.LogIn = Backbone.View.extend({
 
   events: {
     "submit form":"submit",
-    "click button.guest":"loginGuest"
+    "click .guest":"loginGuest"
   },
   submit: function(e) {
     e.preventDefault();
@@ -37,7 +37,7 @@ SkyCast.Views.LogIn = Backbone.View.extend({
     if(this.callback) {
       this.callback();
     } else {
-      Backbone.history.navigate("", { trigger: true })
+      Backbone.history.navigate("", { trigger: true });
     }
   },
 
