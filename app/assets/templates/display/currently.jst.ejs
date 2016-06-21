@@ -1,0 +1,12 @@
+<div class="currently">
+
+  <h1>Currently</h1>
+  <p><%= moment.unix(weather.currently().time).format("dddd, MMMM Do YYYY, h:mm a") %></p>
+  <p><%= weather.currently().summary %></p>
+  <i class="wi wi-forecast-io-<%=weather.currently().icon%>"></i>
+  <p>Temperature: <%= weather.currently().temperature %>°F</p>
+  <p>Humidity: <%= weather.currently().humidity * 100 %>%</p>
+  <p>Wind Speed: <%= weather.currently().windSpeed %>mph</p>
+  <p>Cloud Cover: <%= weather.currently().cloudCover * 100 %>%</p>
+
+</div>

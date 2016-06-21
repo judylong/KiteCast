@@ -1,0 +1,68 @@
+.chart-hourly {
+  border: 2px solid rgb(112, 112, 115);
+}
+
+.currently {
+  margin: 10px auto;
+  border: 2px solid rgb(112, 112, 115);
+  background-color: #353537;
+  border-radius: 3px;
+  padding: 10px;
+  text-align: center;
+  width: 50%;
+}
+
+.display-currently {
+  /*width: 100%;*/
+}
+
+i {
+  font-size: 80px;
+  width: 100px;
+  height: 100px;
+  padding-top: 20px;
+}
+
+.currently h1 {
+  padding: 10px;
+  font-size: 20px;
+}
+
+.currently p {
+  padding: 5px;
+}
+
+.day {
+  margin: 10px auto;
+  border: 2px solid rgb(112, 112, 115);
+  background-color: #353537;
+  border-radius: 3px;
+  padding: 10px;
+  text-align: center;
+  width: 10%;
+  display: inline-block;
+}
+
+.week {
+  text-align: center;
+  background-color: #353537;
+  border: 2px solid rgb(112, 112, 115);
+}
+
+.day-i {
+  font-size: 60px;
+  width: 80px;
+  height: 80px;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+.week h1 {
+  font-size: 20px;
+  padding: 10px;
+  margin: 10px auto;
+}
+
+.display-weekly {
+  margin: 10px auto;
+}

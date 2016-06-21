@@ -1,0 +1,17 @@
+<div class="week">
+  <h1>8 Day Forecast</h1>
+  <p><%= weather.next7days().summary %></p>
+  <% weather.next7days().data.forEach(function(day) { %>
+    <div class="day">
+      <p><%= moment.unix(day.time).format("dddd") %></p>
+      <p><%= moment.unix(day.time).format("MMMM DD") %></p>
+      <br>
+      <p><%= day.summary %></p>
+      <i class="wi wi-forecast-io-<%=day.icon%> day-i"></i>
+      <p>High: <%= day.temperatureMax %>°F</p>
+      <p>Low: <%= day.temperatureMin %>°F</p>
+      <p>Precip: <%= day.precipProbability * 100 %>%</p>
+    </div>
+  <% }); %>
+
+</div>
