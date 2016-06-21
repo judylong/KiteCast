@@ -6,20 +6,21 @@ SkyCast.Models.User = Backbone.Model.extend({
     return json;
   },
 
-  // past_queries: function() {
-  //   if (!this._past_queries) {
-  //     this._past_queries = new SkyCast.Collections.PastQueries();
-  //   }
-  //   return this._past_queries;
-  // },
-  //
-  // parse: function(resp) {
-  //   if (resp.past_queries) {
-  //     this.past_queries().set(resp.past_queries);
-  //     delete resp.past_queries;
-  //   }
-  //   return resp;
-  // },
+  past_queries: function() {
+    if (!this._past_queries) {
+      this._past_queries = new SkyCast.Collections.PastQueries();
+    }
+    return this._past_queries;
+  },
+
+  parse: function(resp) {
+    debugger
+    if (resp.past_queries) {
+      this.past_queries().set(resp.past_queries);
+      delete resp.past_queries;
+    }
+    return resp;
+  },
 
 });
 
@@ -48,10 +49,9 @@ SkyCast.Models.CurrentUser = SkyCast.Models.User.extend({
       dataType: "json",
       success: function(data) {
         model.set(data);
-        options.success && options.success();
       },
       error: function() {
-        options.error && options.error();
+        alert("Error! Could not log in.");
       }
     });
   },
@@ -65,7 +65,9 @@ SkyCast.Models.CurrentUser = SkyCast.Models.User.extend({
       dataType: "json",
       success: function(data) {
         model.clear();
-        options.success && options.success();
+      },
+      error: function() {
+        alert("Error! Could not log out.")
       }
     });
   },
