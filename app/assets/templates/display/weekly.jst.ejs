@@ -10,7 +10,7 @@
       <i class="wi wi-forecast-io-<%=day.icon%> day-i"></i>
       <p>High: <%= day.temperatureMax %>°F</p>
       <p>Low: <%= day.temperatureMin %>°F</p>
-      <p>Precip: <%= day.precipProbability * 100 %>%</p>
+      <p>Precip: <%= +(day.precipProbability * 100).toFixed(2) %>%</p>
     </div>
   <% }); %>
 
