@@ -37,5 +37,19 @@ SkyCast.Models.Weather = Backbone.Model.extend({
       this._next48hours_chart = data;
     }
     return this._next48hours_chart;
+  },
+  getNewWeather: function() {
+    if (SkyCast.autocomplete.getPlace().geometry) {
+      SkyCast.Models.weather.fetch({
+        data: {"query": {"latitude": SkyCast.autocomplete.getPlace().geometry.location.lat(),
+          "longitude": SkyCast.autocomplete.getPlace().geometry.location.lng()}},
+        success: function(model, resp) {
+          SkyCast.Models.weather.trigger('reRender');
+        },
+        error: function(model, resp) {
+          alert("Error");
+        }
+      });
+    }
   }
 });
