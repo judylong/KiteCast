@@ -4,6 +4,9 @@ window.SkyCast = {
   Views: {},
   Routers: {},
   initialize: function() {
+    this.currentUser = new SkyCast.Models.CurrentUser();
+    this.currentUser.fetch();
+
     SkyCast.Models.weather = new SkyCast.Models.Weather();
 
     this.header = new SkyCast.Views.Header({el: $("#header")});
