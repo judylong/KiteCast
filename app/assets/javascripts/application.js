@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require underscore
+//= require moment
 //= require highcharts
 //= require highcharts-theme
 //= require backbone
