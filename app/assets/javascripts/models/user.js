@@ -14,7 +14,6 @@ SkyCast.Models.User = Backbone.Model.extend({
   },
 
   parse: function(resp) {
-    debugger
     if (resp.past_queries) {
       this.past_queries().set(resp.past_queries);
       delete resp.past_queries;

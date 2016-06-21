@@ -26,13 +26,11 @@ SkyCast.Views.UsersForm = Backbone.View.extend({
     this.model.save(userData, {
       success: function() {
         SkyCast.currentUser.fetch();
-        // this.collection.add(this.model, { merge: true });
-        debugger
         Backbone.history.navigate("", { trigger: true });
       }.bind(this),
       error: function(model, resp, data){
         alert(resp.responseJSON.join('\n'));
       }
-    })
+    });
   }
-})
+});
