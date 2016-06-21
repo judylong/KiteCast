@@ -41,9 +41,17 @@ SkyCast.Models.Weather = Backbone.Model.extend({
   getNewWeather: function() {
     if (SkyCast.autocomplete.getPlace().geometry) {
       SkyCast.Models.weather.fetch({
-        data: {"query": {"latitude": SkyCast.autocomplete.getPlace().geometry.location.lat(),
-          "longitude": SkyCast.autocomplete.getPlace().geometry.location.lng()}},
+        data: {
+          "query": {"latitude": SkyCast.autocomplete.getPlace().geometry.location.lat(),
+                    "longitude": SkyCast.autocomplete.getPlace().geometry.location.lng(),
+                    "formatted_address": SkyCast.autocomplete.getPlace().formatted_address
+                    }
+        },
         success: function(model, resp) {
+          Backbone.history.navigate("#display", {trigger: true});
+          if (SkyCast.currentUser.isLoggedIn()) {
+            SkyCast.currentUser.fetch();
+          }
           SkyCast.Models.weather.trigger('reRender');
         },
         error: function(model, resp) {
