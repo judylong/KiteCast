@@ -30,6 +30,11 @@ SkyCast.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
+  showHistory: function() {
+    var view = new SkyCast.Views.ShowHistory();
+    this._swapView(view);
+  },
+
   _swapView: function(view) {
     this._currentView && this._currentView.remove();
     this._currentView = view;
@@ -64,6 +69,6 @@ SkyCast.Routers.Router = Backbone.Router.extend({
   },
 
   _goHome: function() {
-    Backbone.history.navigate("#", { trigger: true })
+    Backbone.history.navigate("#", { trigger: true });
   }
 });
