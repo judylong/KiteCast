@@ -1,10 +1,11 @@
 class Weather
   require 'forecast_io'
-  ForecastIO.api_key = ENV["ForecastIO_KEY"]
 
   attr_reader :cast, :currently, :next48hours_chart, :next7days_chart, :next48hours, :next7days
 
   def initialize(location_params)
+    ForecastIO.api_key = ENV["ForecastIO_KEY"]
+    # debugger
     cast = ForecastIO.forecast(location_params[:latitude], location_params[:longitude], {exclude: ['minutely,flags']})
 
     @currently = cast['currently']
