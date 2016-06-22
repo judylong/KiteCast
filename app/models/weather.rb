@@ -1,6 +1,6 @@
 class Weather
   require 'forecast_io'
-  ForecastIO.api_key = ENV["ForecastIO.api_key"]
+  ForecastIO.api_key = ENV["ForecastIO_KEY"]
 
   attr_reader :cast, :currently, :next48hours_chart, :next7days_chart, :next48hours, :next7days
 
