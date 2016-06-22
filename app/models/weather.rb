@@ -5,8 +5,7 @@ class Weather
 
   def initialize(location_params)
     ForecastIO.api_key = ENV["ForecastIO_KEY"]
-    # debugger
-    cast = ForecastIO.forecast(location_params[:latitude], location_params[:longitude], {exclude: ['minutely,flags']})
+    cast = ForecastIO.forecast(location_params[:latitude], location_params[:longitude])
 
     @currently = cast['currently']
 
