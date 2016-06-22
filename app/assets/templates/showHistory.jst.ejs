@@ -1,6 +1,7 @@
-History here~~
+<h1>History</h1>
+<br>
 <% _.each(queries, function(query){ %>
-  <div class="single-query">
+  <div class="single-query group">
     <div class="single-location"><%= query.escape('formatted_address') %></div>
     <div class="single-created"><%= moment(query.escape('created_at')).format("MMMM Do YYYY h:mm a") %></div>
   </div>

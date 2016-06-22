@@ -31,12 +31,8 @@ SkyCast.Routers.Router = Backbone.Router.extend({
   },
 
   showHistory: function() {
-    if (SkyCast.currentUser.isLoggedIn()) {
-      var view = new SkyCast.Views.ShowHistory();
-      this._swapView(view);
-    } else {
-      alert("Must be logged in to view history!");
-    }
+    var view = new SkyCast.Views.ShowHistory();
+    this._swapView(view);
   },
 
   _swapView: function(view) {

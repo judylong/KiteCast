@@ -48,6 +48,7 @@ SkyCast.Models.CurrentUser = SkyCast.Models.User.extend({
       dataType: "json",
       success: function(data) {
         model.set(data);
+        model.fetch();
       },
       error: function() {
         alert("Error! Could not log in.");

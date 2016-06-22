@@ -1,0 +1,24 @@
+.history {
+  background-color: #353537;
+  border: 2px solid rgb(112, 112, 115);
+  border-radius: 3px;
+  width: 450px;
+  padding: 20px;
+  margin: 10px auto;
+  font-size: 20px;
+  width: 500px;
+}
+
+.history h1 {
+  text-align: center;
+  font-size: 24px;
+  color: #189CBE;
+}
+
+.single-location {
+  float: left;
+}
+
+.single-created {
+  float: right;
+}
