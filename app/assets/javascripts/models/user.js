@@ -1,4 +1,4 @@
-SkyCast.Models.User = Backbone.Model.extend({
+KiteCast.Models.User = Backbone.Model.extend({
   urlRoot: "/api/users",
 
   toJSON: function() {
@@ -8,7 +8,7 @@ SkyCast.Models.User = Backbone.Model.extend({
 
   past_queries: function() {
     if (!this._past_queries) {
-      this._past_queries = new SkyCast.Collections.PastQueries();
+      this._past_queries = new KiteCast.Collections.PastQueries();
     }
     return this._past_queries;
   },
@@ -23,7 +23,7 @@ SkyCast.Models.User = Backbone.Model.extend({
 
 });
 
-SkyCast.Models.CurrentUser = SkyCast.Models.User.extend({
+KiteCast.Models.CurrentUser = KiteCast.Models.User.extend({
   url: "/api/session",
 
   initialize: function(options) {

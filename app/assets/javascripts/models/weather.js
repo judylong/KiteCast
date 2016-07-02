@@ -1,4 +1,4 @@
-SkyCast.Models.Weather = Backbone.Model.extend({
+KiteCast.Models.Weather = Backbone.Model.extend({
   url: "/api/weather/",
   parse: function(resp) {
     this.next7days(resp.next7days);
@@ -39,20 +39,20 @@ SkyCast.Models.Weather = Backbone.Model.extend({
     return this._next48hours_chart;
   },
   getNewWeather: function() {
-    if (SkyCast.autocomplete.getPlace().geometry) {
-      SkyCast.Models.weather.fetch({
+    if (KiteCast.autocomplete.getPlace().geometry) {
+      KiteCast.Models.weather.fetch({
         data: {
-          "query": {"latitude": SkyCast.autocomplete.getPlace().geometry.location.lat(),
-                    "longitude": SkyCast.autocomplete.getPlace().geometry.location.lng(),
-                    "formatted_address": SkyCast.autocomplete.getPlace().formatted_address
+          "query": {"latitude": KiteCast.autocomplete.getPlace().geometry.location.lat(),
+                    "longitude": KiteCast.autocomplete.getPlace().geometry.location.lng(),
+                    "formatted_address": KiteCast.autocomplete.getPlace().formatted_address
                     }
         },
         success: function(model, resp) {
           Backbone.history.navigate("#display", {trigger: true});
-          if (SkyCast.currentUser.isLoggedIn()) {
-            SkyCast.currentUser.fetch();
+          if (KiteCast.currentUser.isLoggedIn()) {
+            KiteCast.currentUser.fetch();
           }
-          SkyCast.Models.weather.trigger('reRender');
+          KiteCast.Models.weather.trigger('reRender');
         },
         error: function(model, resp) {
           alert("Error");

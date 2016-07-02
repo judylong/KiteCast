@@ -1,4 +1,4 @@
-SkyCast.Routers.Router = Backbone.Router.extend({
+KiteCast.Routers.Router = Backbone.Router.extend({
   initialize: function(options) {
     this.$rootEl = options.$rootEl;
   },
@@ -12,26 +12,26 @@ SkyCast.Routers.Router = Backbone.Router.extend({
   },
 
   displayResult: function() {
-    var view = new SkyCast.Views.DisplayResult({model: SkyCast.Models.weather});
+    var view = new KiteCast.Views.DisplayResult({model: KiteCast.Models.weather});
     this._swapView(view);
   },
 
   landing: function() {
-    var view = new SkyCast.Views.Landing();
+    var view = new KiteCast.Views.Landing();
     this._swapView(view);
   },
 
   newUser: function() {
     if (!this._requireLoggedOut()) { return; }
-    var model = new SkyCast.Models.User();
-    var view = new SkyCast.Views.UsersForm({
+    var model = new KiteCast.Models.User();
+    var view = new KiteCast.Views.UsersForm({
       model: model
     });
     this._swapView(view);
   },
 
   showHistory: function() {
-    var view = new SkyCast.Views.ShowHistory();
+    var view = new KiteCast.Views.ShowHistory();
     this._swapView(view);
   },
 
@@ -44,14 +44,14 @@ SkyCast.Routers.Router = Backbone.Router.extend({
   logIn: function(callback) {
     if (!this._requireLoggedOut(callback)) { return; }
 
-    var view = new SkyCast.Views.LogIn({
+    var view = new KiteCast.Views.LogIn({
       callback: callback
     });
     this._swapView(view);
   },
 
   _requireLoggedIn: function(callback) {
-    if (!SkyCast.currentUser.isLoggedIn()) {
+    if (!KiteCast.currentUser.isLoggedIn()) {
       callback = callback || this._goHome.bind(this);
       this.logIn(callback);
       return false;
@@ -60,7 +60,7 @@ SkyCast.Routers.Router = Backbone.Router.extend({
   },
 
   _requireLoggedOut: function(callback){
-    if (SkyCast.currentUser.isLoggedIn()) {
+    if (KiteCast.currentUser.isLoggedIn()) {
       callback = callback || this._goHome.bind(this);
       callback();
       return false;

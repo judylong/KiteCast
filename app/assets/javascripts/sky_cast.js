@@ -1,17 +1,17 @@
-window.SkyCast = {
+window.KiteCast = {
   Models: {},
   Collections: {},
   Views: {},
   Routers: {},
   initialize: function() {
-    this.currentUser = new SkyCast.Models.CurrentUser();
+    this.currentUser = new KiteCast.Models.CurrentUser();
     this.currentUser.fetch();
 
-    SkyCast.Models.weather = new SkyCast.Models.Weather();
+    KiteCast.Models.weather = new KiteCast.Models.Weather();
 
-    this.header = new SkyCast.Views.Header({el: $("#header")});
-    SkyCast.autocomplete = this.initAutocomplete();
-    this.router = new SkyCast.Routers.Router({$rootEl: $("#main")});
+    this.header = new KiteCast.Views.Header({el: $("#header")});
+    KiteCast.autocomplete = this.initAutocomplete();
+    this.router = new KiteCast.Routers.Router({$rootEl: $("#main")});
 
     Backbone.history.start();
   },
@@ -21,7 +21,7 @@ window.SkyCast = {
         /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
         {types: ['geocode']});
 
-    autocomplete.addListener('place_changed', SkyCast.Models.weather.getNewWeather);
+    autocomplete.addListener('place_changed', KiteCast.Models.weather.getNewWeather);
     return autocomplete;
   },
 
@@ -44,5 +44,5 @@ window.SkyCast = {
 };
 
 $(document).ready(function(){
-  SkyCast.initialize();
+  KiteCast.initialize();
 });

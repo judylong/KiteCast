@@ -1,6 +1,6 @@
-SkyCast.Views.DisplayResult = Backbone.View.extend({
+KiteCast.Views.DisplayResult = Backbone.View.extend({
   initialize: function() {
-    this.listenTo(SkyCast.Models.weather, "reRender", this.render);
+    this.listenTo(KiteCast.Models.weather, "reRender", this.render);
   },
 
   template: JST['displayResult'],

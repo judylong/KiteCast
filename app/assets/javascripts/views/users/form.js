@@ -1,4 +1,4 @@
-SkyCast.Views.UsersForm = Backbone.View.extend({
+KiteCast.Views.UsersForm = Backbone.View.extend({
   initialize: function(options) {
     this.listenTo(this.model, "sync change", this.render);
   },
@@ -25,7 +25,7 @@ SkyCast.Views.UsersForm = Backbone.View.extend({
 
     this.model.save(userData, {
       success: function() {
-        SkyCast.currentUser.fetch();
+        KiteCast.currentUser.fetch();
         Backbone.history.navigate("", { trigger: true });
       }.bind(this),
       error: function(model, resp, data){

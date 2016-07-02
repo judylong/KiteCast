@@ -1,9 +1,9 @@
-SkyCast.Views.LogIn = Backbone.View.extend({
+KiteCast.Views.LogIn = Backbone.View.extend({
   template: JST['shared/login'],
 
   initialize: function(options) {
     this.callback = options.callback;
-    this.listenTo(SkyCast.currentUser, "logIn", this.logInCallback);
+    this.listenTo(KiteCast.currentUser, "logIn", this.logInCallback);
   },
 
   render: function() {
@@ -24,7 +24,7 @@ SkyCast.Views.LogIn = Backbone.View.extend({
     var $form = $(e.currentTarget);
     var loginData = $form.serializeJSON().user;
 
-    SkyCast.currentUser.logIn({
+    KiteCast.currentUser.logIn({
       email: loginData.email,
       password: loginData.password,
       error: function() {
@@ -43,7 +43,7 @@ SkyCast.Views.LogIn = Backbone.View.extend({
 
   loginGuest: function(e) {
     e.preventDefault();
-    SkyCast.currentUser.logIn({
+    KiteCast.currentUser.logIn({
       email: 'guestUser@example.com',
       password: 'password',
       error: function() {
