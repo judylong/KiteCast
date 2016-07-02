@@ -1,7 +1,9 @@
+@import 'colors';
+
 .landing {
   font-size: 30px;
-  background-color: #353537;
-  border: 2px solid rgb(112, 112, 115);
+  background-color: $darkest-gray;
+  border: 2px solid $medium-gray;
   border-radius: 3px;
   width: 500px;
   padding: 50px;

@@ -1,14 +1,16 @@
+@import 'colors';
+
 #header {
-  background-color: #353537;
-  border-bottom: 2px solid rgb(112, 112, 115);
+  background-color: $darkest-gray;
+  border-bottom: 2px solid $medium-gray;
   /*height: 50px;*/
   /*display: flex;*/
   /*align-items: center;*/
 }
 
 #autocomplete {
-  background-color: #E0E0E3;
-  color: rgb(112, 112, 115);
+  background-color: $lightest-gray;
+  color: $medium-gray;
   margin-left: 20px;
   width: 400px;
   padding: 5px;
@@ -24,13 +26,11 @@
   display: block;
   float: right;
   padding: 15px;
-}
-
-#headerSub a {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-a:hover {
-  color: #189CBE;
+  a {
+    margin-left: 20px;
+    margin-right: 20px;
+    &:hover {
+      color: $navy;
+    }
+  }
 }

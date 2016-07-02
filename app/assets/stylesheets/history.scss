@@ -1,19 +1,21 @@
+@import 'colors';
+
 .history {
-  background-color: #353537;
-  border: 2px solid rgb(112, 112, 115);
+  background-color: $darkest-gray;
+  border: 2px solid $medium-gray;
   border-radius: 3px;
   width: 750px;
   padding: 20px;
   margin: 10px auto;
   font-size: 20px;
+  h1 {
+    text-align: center;
+    font-size: 24px;
+    color: $navy;
+    padding-bottom: 15px;
+  }
 }
 
-.history h1 {
-  text-align: center;
-  font-size: 24px;
-  color: #189CBE;
-  padding-bottom: 15px;
-}
 
 .single-location {
   float: left;

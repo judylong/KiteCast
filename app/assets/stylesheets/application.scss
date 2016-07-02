@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+@import 'colors';
 
 html, body, header, nav, section, article, h1, p, strong, em, a, ul, div, input, textarea, select {
  margin: 0;
@@ -45,6 +46,6 @@ html {
 
 body {
  min-height: 100%;
- background-color: #E0E0E3;
+ background-color: $lightest-gray;
  color: rgb(211, 211, 211);
 }
