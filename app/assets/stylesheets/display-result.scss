@@ -39,10 +39,16 @@ i {
   border-radius: 3px;
   padding: 10px;
   text-align: center;
-  width: 200px;
-  height: 300px;
-  display: block;
-  float: left;
+  width: 195px;
+  height: auto;
+  display: inline-block;
+  vertical-align: bottom;
+  div {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .week {
