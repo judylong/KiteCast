@@ -5,7 +5,7 @@
 #### Leverages Forecast.io API and Google Maps API to locate and obtain weather information
 
 ### Find a live version [here][heroku]
-[heroku]: https://kitecast.herokuapp.com/
+[heroku]: http://kitecast.judylong.xyz/
 
 
 ### To set up locally
